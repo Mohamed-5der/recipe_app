@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="mar_rig_lift">16dp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_big">32sp</dimen>
+    <dimen name="margin_top">16dp</dimen>
+    <dimen name="drawable_padding">16dp</dimen>
+    <dimen name="btn_size">56dp</dimen>
+
+
+
+
+</resources>
