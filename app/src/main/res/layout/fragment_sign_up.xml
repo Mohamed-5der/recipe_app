@@ -33,7 +33,7 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="5dp"
         app:counterEnabled="true"
         app:helperText="Required"
         app:helperTextTextColor="@color/red"
@@ -61,7 +61,7 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="5dp"
         app:counterEnabled="true"
         app:helperText="Required"
         app:helperTextTextColor="@color/red"
@@ -89,7 +89,7 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="5dp"
         app:counterEnabled="true"
         app:helperText="Required"
         app:helperTextTextColor="@color/red"
@@ -116,7 +116,7 @@
         android:id="@+id/confirm_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="5dp"
         app:counterEnabled="true"
         app:helperText="Required"
         app:helperTextTextColor="@color/red"
@@ -140,42 +140,29 @@
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/cairo"
-        android:text="@string/forgot_password"
-        android:textColor="@color/orange"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toEneOf="@id/password"
-        app:layout_constraintTop_toBottomOf="@id/confirm_password" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_signup"
         android:layout_width="400dp"
         android:layout_height="60dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:text="@string/sign_up"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/forgot_password" />
+        app:layout_constraintTop_toBottomOf="@id/confirm_password" />
 
     <TextView
-        android:id="@+id/signup"
+        android:id="@+id/txt_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo"
         android:text="@string/sign_in"
         android:textColor="@color/orange"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEneOf="@id/password"
         app:layout_constraintStart_toEndOf="@id/register"
-        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@id/btn_signup" />
 
     <TextView
         android:id="@+id/register"
@@ -186,7 +173,6 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toEneOf="@id/password"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@id/btn_signup" />
 </androidx.constraintlayout.widget.ConstraintLayout>
