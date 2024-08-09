@@ -23,4 +23,11 @@
     <string name="please_don_t_forget_this_one_too">Please don’t forget this one too</string>
     <string name="we_will_send_code_to_your_email">We will send code to your email</string>
     <string name="next">Next</string>
+    <string name="contact">contact</string>
+    <string name="contact_number">contact_number</string>
+    <string name="find">Find us on social media</string>
+    <string name="email_address">Email Address</string>
+    <string name="Privacy">Privacy Policy</string>
+    <string name="terms_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.t labore et dolore magna.Lorem ipsum ..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum ..</string>
+    <string name="terms">Terms and Conditions</string>
 </resources>
