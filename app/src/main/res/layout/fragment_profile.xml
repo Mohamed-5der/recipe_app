@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <RelativeLayout
+        android:id="@+id/l_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="40dp"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/txt_namePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/text_size_small"
+            android:text="@string/profile"/>
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_24"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/l_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:src="@drawable/addphoto"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginLeft="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_picture"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_photo"
+                        android:textSize="14sp"
+                        android:textColor="@color/orange"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/l_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mar_rig_lift"
+            android:layout_marginEnd="@dimen/mar_rig_lift"
+            app:boxCornerRadiusBottomEnd="18dp"
+            app:boxCornerRadiusBottomStart="18dp"
+            app:boxCornerRadiusTopEnd="18dp"
+            app:boxCornerRadiusTopStart="18dp"
+            android:layout_marginTop="@dimen/margin_top"
+            app:boxStrokeColor="@color/orange"
+            app:boxStrokeWidth="1dp"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="@string/name"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                android:inputType="text"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/l_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mar_rig_lift"
+            android:layout_marginEnd="@dimen/mar_rig_lift"
+            app:boxCornerRadiusBottomEnd="18dp"
+            app:boxCornerRadiusBottomStart="18dp"
+            app:boxCornerRadiusTopEnd="18dp"
+            app:boxCornerRadiusTopStart="18dp"
+            android:layout_marginTop="@dimen/margin_top"
+            app:boxStrokeColor="@color/orange"
+            app:boxStrokeWidth="1dp"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="@string/email"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                android:inputType="text"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_password"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/edit_password"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_small"
+                />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_size"
+            android:background="@drawable/btn_background_login_custom"
+            android:layout_marginRight="@dimen/mar_rig_lift"
+            android:layout_marginLeft="@dimen/mar_rig_lift"
+            android:text="@string/save"
+            android:layout_marginTop="@dimen/margin_top"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small"
+            android:layout_marginBottom="20dp"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -30,4 +30,9 @@
     <string name="Privacy">Privacy Policy</string>
     <string name="terms_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.t labore et dolore magna.Lorem ipsum ..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Lorem ipsum ..</string>
     <string name="terms">Terms and Conditions</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="upload_photo">Upload Photo</string>
+    <string name="profile_picture">Profile Picture</string>
 </resources>
