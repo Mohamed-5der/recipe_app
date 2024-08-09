@@ -176,19 +176,17 @@
                 />
         </RelativeLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btn_save"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/btn_size"
-            android:background="@drawable/btn_background_login_custom"
-            android:layout_marginRight="@dimen/mar_rig_lift"
-            android:layout_marginLeft="@dimen/mar_rig_lift"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
             android:text="@string/save"
-            android:layout_marginTop="@dimen/margin_top"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_small"
-            android:layout_marginBottom="20dp"
-            />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirm_password" />
 
     </LinearLayout>
 
