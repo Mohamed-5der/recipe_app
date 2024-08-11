@@ -159,19 +159,19 @@
             android:id="@+id/edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_password"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="15dp"
-            >
+            android:background="@drawable/edit_password">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textStyle="bold"
                 android:textColor="@color/orange"
+                android:text="@string/edit_password"
                 android:textSize="@dimen/text_size_small"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <Button
