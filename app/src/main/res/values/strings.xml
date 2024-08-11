@@ -32,4 +32,11 @@
     <string name="terms">Terms and Conditions</string>
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
+    <string name="let_s_cooking">Let’s Cooking</string>
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="home">Home</string>
+    <string name="more">More</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="sign_out">Sign Out</string>
 </resources>
