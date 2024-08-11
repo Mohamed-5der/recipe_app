@@ -97,7 +97,6 @@
         android:textColor="@color/orange"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toEneOf="@id/password"
         app:layout_constraintTop_toBottomOf="@id/password" />
 
     <Button
@@ -120,7 +119,6 @@
         android:text="@string/sign_up"
         android:textColor="@color/orange"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEneOf="@id/password"
         app:layout_constraintStart_toEndOf="@id/register"
         app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
@@ -133,7 +131,6 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toEneOf="@id/password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_login" />
 

@@ -3,6 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/cairo</item>
         <item>@font/cairo_bold</item>
-        <item>@font/cairo_extralight</item>
+
     </array>
 </resources>
