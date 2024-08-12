@@ -66,6 +66,14 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.2"
 
+    implementation("io.coil-kt:coil-compose:2.7.0")
+
+// Retrofit & Converter
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+// interceptor to debug network calls
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
     // DataBinding
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat

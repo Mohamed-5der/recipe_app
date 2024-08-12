@@ -8,7 +8,7 @@
     <item
         android:id="@+id/Favourite"
         android:title="@string/favourite"
-        android:icon="@drawable/favourites"
+        android:icon="@drawable/baseline_favorite_border_24"
         />
         <item
             android:id="@+id/profile"

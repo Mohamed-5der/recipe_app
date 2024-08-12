@@ -3,6 +3,7 @@
     <style name="Base.Theme.RecipeApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/orange</item>
+
     </style>
 
     <style name="Theme.RecipeApp" parent="Base.Theme.RecipeApp" />
