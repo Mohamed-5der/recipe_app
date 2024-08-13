@@ -1,21 +1,30 @@
 package com.example.recipeapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.recipeapp.Repository.FavoriteRepository
 import com.example.recipeapp.databinding.FragmentFavoriteBinding
 import com.example.recipeapp.db.UserDatabase
+import com.example.recipeapp.model.Favorite
+import com.example.recipeapp.viewmodel.FavoriteViewModel
+import com.example.recipeapp.viewmodel.FavoriteViewModelFactory
+import kotlinx.coroutines.launch
 
 class FavoriteFragment : Fragment() {
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var favoriteViewModel: FavoriteViewModel
+    private lateinit var favoriteAdapter: AdapterFavorite
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,9 +32,46 @@ class FavoriteFragment : Fragment() {
     ): View {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
 
+        // Initialize ViewModel
+        val favoriteRepository = FavoriteRepository(UserDatabase.getDatabase(requireContext()).favoriteDao())
+        val favoriteViewModelFactory = FavoriteViewModelFactory(favoriteRepository)
+        favoriteViewModel = ViewModelProvider(this, favoriteViewModelFactory).get(FavoriteViewModel::class.java)
 
+        // Setup Adapter
+        favoriteAdapter = AdapterFavorite(emptyList(), ::navToDetails, ::toggleFavorite)
+        binding.itemRecyclerView.layoutManager = LinearLayoutManager(context)
+        binding.itemRecyclerView.adapter = favoriteAdapter
+
+        // Observe ViewModel
+        observeViewModel()
 
         return binding.root
+    }
+
+    private fun observeViewModel() {
+        favoriteViewModel.allFavorites.observe(viewLifecycleOwner, { favorites ->
+            favoriteAdapter.updateData(favorites)
+        })
+    }
+
+    private fun navToDetails(id: String) {
+        val intent = Intent(context, DetailsActivity::class.java)
+        intent.putExtra("id", id)
+        startActivity(intent)
+    }
+
+    private fun toggleFavorite(addFav: Boolean, favorite: Favorite) {
+        if (addFav) {
+            lifecycleScope.launch {
+                favoriteViewModel.insertFavorite(favorite)
+                Toast.makeText(context, "Added to favorites", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            lifecycleScope.launch {
+                favoriteViewModel.removeFavoriteByCategoryId(favorite.idCategory)
+                Toast.makeText(context, "Removed from favorites", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onDestroyView() {

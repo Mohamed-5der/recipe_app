@@ -5,11 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.recipeapp.model.User
+import com.example.recipeapp.model.Favorite
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, Favorite::class], version = 2, exportSchema = false)
 abstract class UserDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
+    abstract fun favoriteDao(): FavoriteDao
 
     companion object {
         @Volatile
@@ -21,7 +23,8 @@ abstract class UserDatabase : RoomDatabase() {
                     context.applicationContext,
                     UserDatabase::class.java,
                     "app_database"
-                ).build()
+                ).fallbackToDestructiveMigration() // to handle schema changes
+                    .build()
                 INSTANCE = instance
                 instance
             }
