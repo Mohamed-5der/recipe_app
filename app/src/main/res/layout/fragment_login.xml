@@ -33,10 +33,20 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30sp"
-        app:helperTextTextColor="@color/red"
+        android:layout_marginStart="@dimen/mar_rig_lift"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/mar_rig_lift"
+        android:textColorHint="@color/black"
+        android:textSize="18sp"
+        app:boxCornerRadiusBottomEnd="18dp"
+        app:boxCornerRadiusBottomStart="18dp"
+        app:boxCornerRadiusTopEnd="18dp"
+        app:boxCornerRadiusTopStart="18dp"
+        app:boxStrokeColor="@color/orange"
+        app:boxStrokeWidth="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_text">
@@ -44,44 +54,48 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_edittext"
-            android:backgroundTint="@android:color/black"
+            android:layout_height="52dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="10dp"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30sp"
-
-        app:helperTextTextColor="@color/red"
+        android:layout_marginStart="@dimen/mar_rig_lift"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/mar_rig_lift"
+        android:textColorHint="@color/black"
+        android:textSize="18sp"
+        app:boxCornerRadiusBottomEnd="18dp"
+        app:boxCornerRadiusBottomStart="18dp"
+        app:boxCornerRadiusTopEnd="18dp"
+        app:boxCornerRadiusTopStart="18dp"
+        app:boxStrokeColor="@color/orange"
+        app:boxStrokeWidth="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black"
         app:layout_constraintTop_toBottomOf="@id/email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_edittext"
-            android:backgroundTint="@android:color/black"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:layout_height="52dp"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="10dp"
+            android:textSize="@dimen/text_size_small"
+            android:textStyle="bold"
+            android:hint="@string/password"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -99,9 +113,11 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/login"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

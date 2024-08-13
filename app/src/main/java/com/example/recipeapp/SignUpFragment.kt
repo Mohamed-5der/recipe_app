@@ -13,8 +13,8 @@ import com.example.recipeapp.databinding.FragmentSignUpBinding
 import com.example.recipeapp.db.UserDatabase
 import com.example.recipeapp.model.User
 
-
 class SignUpFragment : Fragment() {
+
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
 
@@ -37,12 +37,17 @@ class SignUpFragment : Fragment() {
             val name = binding.etName.text.toString()
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
-            val user = User(name = name, email = email, password = password)
-            userViewModel.insertUser(user){
-                Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show()
-             findNavController().navigate(R.id.action_signUpFragment_to_mainActivity)
-            }
 
+            // Check if any field is empty
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(context, "Please fill out all fields", Toast.LENGTH_SHORT).show()
+            } else {
+                val user = User(name = name, email = email, password = password)
+                userViewModel.insertUser(user) {
+                    Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_signUpFragment_to_mainActivity)
+                }
+            }
         }
     }
 
