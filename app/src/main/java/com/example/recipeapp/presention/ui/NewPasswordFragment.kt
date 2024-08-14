@@ -24,7 +24,7 @@ class NewPasswordFragment : Fragment() {
     private val viewModel: UserViewModel by viewModels {
         UserViewModelFactory(UserRepository(UserDatabase.getDatabase(requireContext()).userDao()))
     }
-    private val args: NewPasswordFragmentArgs by navArgs()  // Receive the reset token from the email link
+    private val args: NewPasswordFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

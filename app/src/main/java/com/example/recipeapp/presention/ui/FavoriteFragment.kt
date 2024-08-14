@@ -55,7 +55,6 @@ class FavoriteFragment : Fragment() {
 
 
         }
-        // Observe ViewModel
         observeViewModel()
 
         return binding.root

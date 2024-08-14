@@ -54,11 +54,11 @@ class SignUpFragment : Fragment() {
             } else {
                 val user = User(name = name, email = email, password = password)
                 userViewModel.insertUser(user) {
-                    // Save email and name to SharedPreferences
+
                     with(sh.edit()) {
                         putString("email", email)
                         putString("name", name)
-                        apply() // Use apply() for async saving
+                        apply()
                     }
 
                     Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show()

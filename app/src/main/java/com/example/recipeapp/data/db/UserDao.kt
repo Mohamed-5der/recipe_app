@@ -24,6 +24,7 @@ interface UserDao {
 
     @Query("UPDATE users SET password = :newPassword, name = :name WHERE email = :email AND password = :oldPassword")
     suspend fun updateUserDetails(email: String, oldPassword: String, newPassword: String, name: String): Int
+
     @Query("DELETE FROM users WHERE email = :email")
     suspend fun deleteUserByEmail(email: String)
 

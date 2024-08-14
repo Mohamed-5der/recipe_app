@@ -9,7 +9,6 @@ import kotlinx.coroutines.launch
 
 class FavoriteViewModel(private val repository: FavoriteRepository) : ViewModel() {
 
-    // Expose LiveData for observing changes
     val allFavorites: LiveData<List<Favorite>> = repository.getAllFavorites()
 
     fun insertFavorite(favorite: Favorite) {

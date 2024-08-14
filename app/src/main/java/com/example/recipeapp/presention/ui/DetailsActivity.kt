@@ -54,9 +54,6 @@ class DetailsActivity : AppCompatActivity() {
 
         }
 
-
-
-
         setContentView(binding.root)
 
     }

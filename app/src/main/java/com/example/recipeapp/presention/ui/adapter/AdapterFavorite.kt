@@ -42,7 +42,7 @@ class AdapterFavViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val addFavorite: ImageButton = itemView.findViewById(R.id.add_to_favorite)
 
     fun bind(favorite: Favorite, onItemClick: (id: String) -> Unit, onFavoriteClick: (addFav: Boolean, item: Favorite) -> Unit) {
-        var isFavorite = true // Assume all items are favorites; update this based on your logic
+        var isFavorite = true
         title.text = favorite.strCategory
         description.text = favorite.strCategoryDescription
         image.load(favorite.strCategoryThumb)
