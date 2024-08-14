@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.recipeapp.LoginFragment"
+        android:name="com.example.recipeapp.presention.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.recipeapp.SignUpFragment"
+        android:name="com.example.recipeapp.presention.ui.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -39,7 +39,7 @@
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.recipeapp.ForgotPasswordFragment"
+        android:name="com.example.recipeapp.presention.ui.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.example.recipeapp.NewPasswordFragment"
+        android:name="com.example.recipeapp.presention.ui.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.recipeapp.SplashFragment"
+        android:name="com.example.recipeapp.presention.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

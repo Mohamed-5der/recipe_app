@@ -13,10 +13,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import com.example.recipeapp.Repository.UserRepository
+import com.example.recipeapp.Di.UserViewModelFactory
+import com.example.recipeapp.data.Repository.UserRepository
 import com.example.recipeapp.databinding.ActivityMainBinding
-import com.example.recipeapp.db.UserDatabase
+import com.example.recipeapp.data.db.UserDatabase
+import com.example.recipeapp.presention.ui.AuthActivity
+import com.example.recipeapp.presention.ui.ContactUsFragment
+import com.example.recipeapp.presention.ui.FavoriteFragment
+import com.example.recipeapp.presention.ui.HomeFragment
+import com.example.recipeapp.presention.ui.ProfileFragment
+import com.example.recipeapp.presention.viweModel.UserViewModel
 
 
 class MainActivity : AppCompatActivity() {
