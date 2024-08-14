@@ -1,5 +1,7 @@
 package com.example.recipeapp
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.example.recipeapp.Repository.UserRepository
 import com.example.recipeapp.databinding.FragmentLoginBinding
 import com.example.recipeapp.db.UserDatabase
@@ -15,6 +18,7 @@ import com.example.recipeapp.db.UserDatabase
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+    lateinit var sh : SharedPreferences
     private val userViewModel: UserViewModel by viewModels {
         UserViewModelFactory(UserRepository(UserDatabase.getDatabase(requireContext()).userDao()))
     }
@@ -23,6 +27,8 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        sh = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE)
+
         return binding.root
     }
 
@@ -35,7 +41,11 @@ class LoginFragment : Fragment() {
             userViewModel.login(email, password) { user ->
                 if (user != null) {
                     Toast.makeText(context, "User Login successfully", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+                    findNavController().navigate(R.id.action_loginFragment_to_mainActivity,
+                        null,
+                        navOptions {
+                            popUpTo(R.id.loginFragment) { inclusive = true }
+                        })
                 } else {
                     Toast.makeText(context, "Invalid email or password", Toast.LENGTH_SHORT).show()
                 }
@@ -43,10 +53,18 @@ class LoginFragment : Fragment() {
         }
 
         binding.signup.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment,
+                null,
+                navOptions {
+                    popUpTo(R.id.loginFragment) { inclusive = true }
+                })
         }
         binding.forgotPassword.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment,
+                null,
+                navOptions {
+                    popUpTo(R.id.loginFragment) { inclusive = true }
+                })
         }
     }
 

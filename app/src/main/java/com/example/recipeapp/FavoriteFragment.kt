@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -32,16 +33,27 @@ class FavoriteFragment : Fragment() {
     ): View {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
 
-        // Initialize ViewModel
         val favoriteRepository = FavoriteRepository(UserDatabase.getDatabase(requireContext()).favoriteDao())
         val favoriteViewModelFactory = FavoriteViewModelFactory(favoriteRepository)
         favoriteViewModel = ViewModelProvider(this, favoriteViewModelFactory).get(FavoriteViewModel::class.java)
 
-        // Setup Adapter
         favoriteAdapter = AdapterFavorite(emptyList(), ::navToDetails, ::toggleFavorite)
         binding.itemRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.itemRecyclerView.adapter = favoriteAdapter
 
+        binding.etSearch.addTextChangedListener {
+            val query = binding.etSearch.text.toString()
+
+                val filteredList = favoriteViewModel.allFavorites.value?.filter { category ->
+                    category.strCategory.contains(query, ignoreCase = true)
+                }
+                filteredList?.let { it1 ->
+                    (binding.itemRecyclerView.adapter as? AdapterFavorite)?.updateData(
+                        it1)
+                }
+
+
+        }
         // Observe ViewModel
         observeViewModel()
 

@@ -40,7 +40,7 @@ class NewPasswordFragment : Fragment() {
 
             if (newPassword == confirmPassword) {
                 if (newPassword.isNotEmpty()) {
-                    viewModel.forgotPassword(args.email, newPassword){
+                    viewModel.updatePassword(args.email, newPassword){
                         Toast.makeText(requireContext(), "Password reset successfully", Toast.LENGTH_SHORT).show()
                         findNavController().navigate(R.id.action_newPasswordFragment_to_mainActivity)
                     }

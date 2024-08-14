@@ -20,6 +20,9 @@ class UserRepository(private val userDao: UserDao) {
     suspend fun updatePassword(email: String, password: String) {
         userDao.updatePassword(email, password)
     }
-
+    suspend fun updateUserDetails(email: String, oldPassword: String, newPassword: String, name: String)=userDao.updateUserDetails(email, oldPassword, newPassword, name)
+    suspend fun deleteUser(email: String) {
+        userDao.deleteUserByEmail(email)
+    }
 
 }

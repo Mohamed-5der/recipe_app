@@ -24,8 +24,8 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:layout_width="148dp"
-                    android:layout_height="148dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/person" />
@@ -126,24 +126,78 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <RelativeLayout
-            android:id="@+id/edit"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/l_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/edit_password">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mar_rig_lift"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginEnd="@dimen/mar_rig_lift"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"
+            app:boxCornerRadiusBottomEnd="18dp"
+            app:boxCornerRadiusBottomStart="18dp"
+            app:boxCornerRadiusTopEnd="18dp"
+            app:boxCornerRadiusTopStart="18dp"
+            app:boxStrokeColor="@color/orange"
+            app:boxStrokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/edit_password"
-                android:textColor="@color/orange"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
                 android:textSize="@dimen/text_size_small"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                android:textStyle="bold"
+                android:hint="Old Password"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/l_confirm_pass"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mar_rig_lift"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginEnd="@dimen/mar_rig_lift"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"
+            app:boxCornerRadiusBottomEnd="18dp"
+            app:boxCornerRadiusBottomStart="18dp"
+            app:boxCornerRadiusTopEnd="18dp"
+            app:boxCornerRadiusTopStart="18dp"
+            app:boxStrokeColor="@color/orange"
+            app:boxStrokeWidth="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_new_password"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                android:hint="New Password"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_save"

@@ -1,13 +1,18 @@
 package com.example.recipeapp
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.example.recipeapp.Repository.UserRepository
 import com.example.recipeapp.databinding.FragmentSignUpBinding
 import com.example.recipeapp.db.UserDatabase
@@ -17,6 +22,7 @@ class SignUpFragment : Fragment() {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
+    private lateinit var sh: SharedPreferences
 
     private val userViewModel: UserViewModel by viewModels {
         UserViewModelFactory(UserRepository(UserDatabase.getDatabase(requireContext()).userDao()))
@@ -27,6 +33,10 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        binding.txtSignin.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+        }
+        sh = requireContext().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE)
         return binding.root
     }
 
@@ -38,14 +48,25 @@ class SignUpFragment : Fragment() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            // Check if any field is empty
             if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(context, "Please fill out all fields", Toast.LENGTH_SHORT).show()
             } else {
                 val user = User(name = name, email = email, password = password)
                 userViewModel.insertUser(user) {
+                    // Save email and name to SharedPreferences
+                    with(sh.edit()) {
+                        putString("email", email)
+                        putString("name", name)
+                        apply() // Use apply() for async saving
+                    }
+
                     Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_signUpFragment_to_mainActivity)
+                    findNavController().navigate(R.id.action_signUpFragment_to_mainActivity,
+                        null,
+                        navOptions {
+                            popUpTo(R.id.signUpFragment) { inclusive = true }
+                        })
+
                 }
             }
         }

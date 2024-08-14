@@ -22,7 +22,7 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
         }
     }
 
-    fun forgotPassword(email: String, newPassword: String, onComplete: () -> Unit) {
+    fun updatePassword(email: String, newPassword: String, onComplete: () -> Unit) {
         viewModelScope.launch {
             repository.updatePassword(email, newPassword)
             onComplete()
@@ -33,6 +33,17 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
         viewModelScope.launch {
             val user = repository.getUserByEmail(email)
             onResult(user)
+        }
+    }
+    fun updateProfile(email: String, oldPassword: String, newPassword: String,name: String, onComplete: () -> Unit) {
+        viewModelScope.launch {
+            repository.updateUserDetails(email, oldPassword, newPassword,name)
+            onComplete()
+        }
+    }
+    fun deleteUser(email: String) {
+        viewModelScope.launch {
+            repository.deleteUser(email)
         }
     }
 }
