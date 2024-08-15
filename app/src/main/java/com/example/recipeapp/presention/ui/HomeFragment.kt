@@ -57,8 +57,6 @@ class HomeFragment : Fragment() {
         val favoriteViewModelFactory = FavoriteViewModelFactory(favoriteRepository)
         favoriteViewModel = ViewModelProvider(this, favoriteViewModelFactory).get(FavoriteViewModel::class.java)
 
-
-
         setupUI()
         observeViewModel()
 
