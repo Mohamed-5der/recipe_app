@@ -38,7 +38,7 @@ class FavoriteFragment : Fragment() {
         val favoriteViewModelFactory = FavoriteViewModelFactory(favoriteRepository)
         favoriteViewModel = ViewModelProvider(this, favoriteViewModelFactory).get(FavoriteViewModel::class.java)
 
-        favoriteAdapter = AdapterFavorite(emptyList(), ::navToDetails, ::toggleFavorite)
+        favoriteAdapter = AdapterFavorite(emptyList(), ::navToDetails, ::addFavorite)
         binding.itemRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.itemRecyclerView.adapter = favoriteAdapter
 
@@ -61,9 +61,9 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        favoriteViewModel.allFavorites.observe(viewLifecycleOwner, { favorites ->
+        favoriteViewModel.allFavorites.observe(viewLifecycleOwner) { favorites ->
             favoriteAdapter.updateData(favorites)
-        })
+        }
     }
 
     private fun navToDetails(id: String) {
@@ -72,7 +72,7 @@ class FavoriteFragment : Fragment() {
         startActivity(intent)
     }
 
-    private fun toggleFavorite(addFav: Boolean, favorite: Favorite) {
+    private fun addFavorite(addFav: Boolean, favorite: Favorite) {
         if (addFav) {
             lifecycleScope.launch {
                 favoriteViewModel.insertFavorite(favorite)
